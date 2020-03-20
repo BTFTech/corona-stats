@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
+<link rel="stylesheet" type="text/css" href="
+https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> -->
+<script src="index.js" defer></script>
+<style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+.Blink {
+  animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+@keyframes blinker {  
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand text-white" href="#">
+    Blockchain Trust Factor Ltd 
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-info my-2 my-sm-0" type="submit" >Search</button>
+    </form>
+  </div>
+</nav>
+
+<br>
+
+<div class="container-fluid">
+<div class="row">
+  
+<div class="col-sm-6">
+  
+
+  <div class=" card" style="padding: 20px;">
+    <div><i class="far fa-dot-circle text-danger Blink"></i>&nbsp; LIVE </div>
+
+  <div class="card-deck">
+
+  <div class="card" id="getStats" onclick="getStats()">
+    <div class="card-body" style="background-color: #9bbcf2">
+      <h5 class="card-title text-white">Stats Overview</h5>
+    </div>
+    <div class="card-footer text-white bg-primary">
+      <h5 class="card-title">Global</h5>
+      
+    </div>
+  </div>
+
+  <div class="card ">
+    <div class="card-body" style="background-color: #f5a8c1">
+      <h3 class="card-title text-white font-weight-bold" id="confirmed">Loading..</h3>
+    </div>
+    <div class="card-footer text-white bg-danger">
+      <h5 class="card-title">Confirmed</h5>
+    </div>
+  </div>
+
+  <div class="card ">
+    <div class="card-body" style="background-color: #a3dfaa">
+      <h3 class="card-title text-white font-weight-bold" id="recovered">Loading..</h3>
+    </div>
+    <div class="card-footer text-white bg-success">
+      <h5 class="card-title">Recovered</h5>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body" style="background-color: #9adcd9">
+      <h3 class="card-title text-white font-weight-bold" id="deaths">Loading..</h3>
+    </div>
+    <div class="card-footer text-white bg-info">
+      <h5 class="card-title">Deaths</h5>
+    </div>
+  </div>
+
+</div>
+
+<p class="card-text text-right" id="updatedAt"><small></small></p>
+
+</div>
+</div>
+
+<!-- class="float-lg-right" -->
+<div class="col-sm-6">
+  <h3>COUNTRIES AFFECTED</h3>
+  <div style="padding: 15px;width: 100%;height: 8%;overflow: scroll;border: 1px solid #ccc;">
+    <span class="" id="getCountries" onclick="getCountries()"></span>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #1d74e1;text-align: center;">
+  <a target="_blank" href="http://blockchaintrustfactor.com/" class="text-white">Developed By BTF. LTD</a>
+</div>
+
+</body>
+<script type="text/javascript">
+  (function() {
+  setTimeout(function(){
+    $('#getStats').click();
+    $('#getCountries').click(); 
+       }, 30000);
+   })()
+
+
+//    $(document).ready(function() {
+//     $('#getCountries').DataTable();
+// } );
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</html>
+
+
