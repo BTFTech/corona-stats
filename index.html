@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Corona-Stats</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -14,7 +13,7 @@ https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> -->
 <script src="index.js" defer></script>
 <style>
   body {
-    overflow:hidden;
+    overflow:auto;
     margin: 0;
     box-sizing:border-box;
 }
@@ -45,7 +44,7 @@ td,th {
 
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <a class="navbar-brand text-white" href="#">
-    Blockchain Trust Factor Ltd 
+    Corona Stats
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,9 +60,7 @@ td,th {
     </form>
   </div>
 </nav>
-
-<br>
-
+</br>
 <div class="container-fluid">
 <div class="row">
   
@@ -111,21 +108,17 @@ td,th {
       <h5 class="card-title">Deaths</h5>
     </div>
   </div>
-
 </div>
-
 <p class="card-text text-right" id="updatedAt"><small></small></p>
-
 </div>
 </div>
-
+</br>
 <!-- class="float-lg-right" -->
-<div class="col-sm-6">
-  <h3>COUNTRIES AFFECTED</h3>
+<div class="col-sm-6" style="padding: 20px">
+  <h4>COUNTRIES AFFECTED</h4>
   <div style="padding: 15px;width: 100%;height: 8%;overflow: scroll;border: 1px solid #ccc;">
-    <span class="" id="getCountries" onclick="getCountries()"></span>
+    <span id="getCountries" onclick="getCountries()"></span>
   </div>
-
 </div>
 </div>
 </div>
