@@ -25,6 +25,7 @@ function getCountries() {
     type: "get",
     data: {},
     success: function (response) {
+      let deathsToday = 0;
       let sectionsContent = `<table class="table table-striped table-bordered" >
               <tr>
              <th>S.No</th>
@@ -36,7 +37,8 @@ function getCountries() {
             <th>Today Deaths</th>
             </tr>`
                          for(let i = 0; i <response.length; i++) {
-                             sectionsContent += `<tr>
+                            deathsToday+= response[i].todayDeaths; 
+                            sectionsContent += `<tr>
                              <td>${i+1}</td>
                             <td>${response[i].country}</td>
                             <td>${response[i].cases}</td>
@@ -48,6 +50,7 @@ function getCountries() {
                     }
                  let content= sectionsContent+`</table>` 
                  document.querySelector('#getCountries').innerHTML = content
+                 document.querySelector('#getTodayDeaths').innerHTML = deathsToday
     },
     error: function (xhr) {
       stopLoading();
