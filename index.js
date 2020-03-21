@@ -50,7 +50,7 @@ function getCountries() {
                     }
                  let content= sectionsContent+`</table>` 
                  document.querySelector('#getCountries').innerHTML = content
-                 document.querySelector('#getTodayDeaths').innerHTML = deathsToday
+                 document.querySelector('#getDeathsToday').innerHTML = deathsToday
     },
     error: function (xhr) {
       stopLoading();
