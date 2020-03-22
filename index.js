@@ -14,7 +14,6 @@ function getStats() {
                  document.querySelector('#updatedAt').innerHTML = `Last Updated At ${dateUpdated}`;
     },
     error: function (xhr) {
-      stopLoading();
       alert('Internal Server Error..')
     }
   });
@@ -53,7 +52,6 @@ function getCountries() {
                  document.querySelector('#getDeathsToday').innerHTML = deathsToday
     },
     error: function (xhr) {
-      stopLoading();
       alert('Internal Server Error..')
     }
   });
