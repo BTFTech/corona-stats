@@ -14,7 +14,7 @@ function getStats() {
                  document.querySelector('#updatedAt').innerHTML = `Last Updated At ${dateUpdated}`;
     },
     error: function (xhr) {
-      alert('Internal Server Error..')
+      alert('Oops!!! Something went terribly wrong. We have sent out a higly trained team of monkeys to handle this situation.')
     }
   });
 }
@@ -34,6 +34,8 @@ function getCountries() {
             <th>Recovered</th> 
             <th>Today Reported</th>
             <th>Today Deaths</th>
+            <th>Active</th>
+            <th>Critical</th>
             </tr>`
                          for(let i = 0; i <response.length; i++) {
                             deathsToday+= response[i].todayDeaths; 
@@ -45,6 +47,8 @@ function getCountries() {
                             <td>${response[i].recovered}</td>
                             <td>${response[i].todayCases}</td>
                            <td>${response[i].todayDeaths}</td>
+                           <td>${response[i].active}</td>
+                           <td>${response[i].critical}</td>
                         </tr>`
                     }
                  let content= sectionsContent+`</table>` 
@@ -52,7 +56,7 @@ function getCountries() {
                  document.querySelector('#getDeathsToday').innerHTML = deathsToday
     },
     error: function (xhr) {
-      alert('Internal Server Error..')
+      alert('Oops!!! Something went terribly wrong. We have sent out a higly trained team of monkeys to handle this situation.')
     }
   });
 }
