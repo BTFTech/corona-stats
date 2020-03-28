@@ -18,6 +18,43 @@ function getStats() {
     }
   });
 }
+function searchByCountry() {
+  let query = document.getElementById("searchQuery").value;
+  $.ajax({
+    url:`https://corona.lmao.ninja/countries/${query}`,
+    type: "get",
+    data: {},
+    success: function (response) {
+        let sectionsContent = `<table class="table table-striped table-bordered" >
+              <tr>
+            <th>Country</th>
+            <th>Cases</th>
+            <th>Deaths</th>
+            <th>Recovered</th> 
+            <th>Today Reported</th>
+            <th>Today Deaths</th>
+            <th>Active</th>
+            <th>Critical</th>
+            </tr>
+            <tr>
+            <td>${response.country}</td>
+            <td>${response.cases}</td>
+            <td>${response.deaths}</td>
+            <td>${response.recovered}</td>
+            <td>${response.todayCases}</td>
+            <td>${response.todayDeaths}</td>
+            <td>${response.active}</td>
+            <td>${response.critical}</td>
+            </tr>
+            </table>`
+            console.log(response.country)
+          document.querySelector('#searchResponse').innerHTML = sectionsContent;
+    },
+    error: function (xhr) {
+      alert('Oops!!! No search Results or we might messed up!!')
+    }
+  });
+}
 function getCountries() {
   $.ajax({
     url:'https://corona.lmao.ninja/countries',
