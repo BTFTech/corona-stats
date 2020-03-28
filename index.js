@@ -47,7 +47,6 @@ function searchByCountry() {
             <td>${response.critical}</td>
             </tr>
             </table>`
-            console.log(response.country)
           document.querySelector('#searchResponse').innerHTML = sectionsContent;
     },
     error: function (xhr) {
